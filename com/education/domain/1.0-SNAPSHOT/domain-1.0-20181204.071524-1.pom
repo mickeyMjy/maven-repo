@@ -23,7 +23,7 @@
                     <repositoryName>maven-repo</repositoryName>
                     <repositoryOwner>mickeyMjy</repositoryOwner>
                     <!--dependency分支-->
-                    <branch>refs/heads/domain</branch>
+                    <branch>refs/heads/${project.artifactId}</branch>
                     <message>Artifacts for ${project.name}/${project.artifactId}/${project.version}</message>
                     <noJekyll>true</noJekyll>
                     <!-- Deployment values -->
