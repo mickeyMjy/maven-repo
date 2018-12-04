@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud-common</artifactId>
+        <groupId>com.education</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>domain</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <!-- Github settings -->
+                    <!--<server>github</server>-->
+                    <repositoryName>maven-repo</repositoryName>
+                    <repositoryOwner>mickeyMjy</repositoryOwner>
+                    <!--dependency分支-->
+                    <branch>refs/heads/domain</branch>
+                    <message>Artifacts for ${project.name}/${project.artifactId}/${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <!-- Deployment values -->
+                    <outputDirectory>${project.build.directory}/jar</outputDirectory>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
